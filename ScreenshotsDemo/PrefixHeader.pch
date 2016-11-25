@@ -1,0 +1,66 @@
+//
+//  PrefixHeader.pch
+//  InsectsAssistant
+//
+//  Created by Nemo on 15/7/2.
+//  Copyright (c) 2015年 Nemo. All rights reserved.
+//
+
+#ifndef InsectsAssistant_PrefixHeader_pch
+#define InsectsAssistant_PrefixHeader_pch
+
+#define SCREENWIDTH  [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN [UIScreen mainScreen].bounds
+#define SCALE [UIScreen mainScreen].scale
+#define WEAKSELF(SELF) typeof(SELF) __weak weakSelf = SELF;
+
+// RGB颜色
+#define RGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a]
+#define RGB(r,g,b)   RGBA(r,g,b,1)
+
+//灰色
+#define LIGHTCOLOR RGB(241,241,241)
+
+//字体
+#define TEXTCOLOR RGB(35,35,35)
+
+//主题色 RGB(41, 106, 166)
+#define HOMECOLOR RGB(271, 38, 26)
+
+//背景色
+#define BGCOLOR RGB(224, 238, 247)
+
+// 随机色
+#define ARCCOLOR RGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#define FONT(s)        [UIFont systemFontOfSize:s/[UIScreen mainScreen].scale]
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef DEBUG
+#define ANSLog(format, ...) printf("\n[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+#else
+#define ANSLog(format, ...)
+#endif
+
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+#ifdef DEBUG // 处于开发阶段
+#define NMLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define NMLog(...)
+#endif
+
+
+#endif

@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "PrefixHeader.pch"
+#import "DrawRectView.h"
 
 @interface ViewController ()
 
@@ -16,7 +18,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIImage *image = [UIImage imageNamed:@"pic_029.jpg"];
+    UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
+    imageV.frame = CGRectMake(10, 100, image.size.width, image.size.height);
+    [self.view addSubview:imageV];
+    
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    
+    UIWindow *screenWindow = [[UIApplication sharedApplication].windows lastObject];
+    
+    UIGraphicsBeginImageContext(screenWindow.frame.size);
+    
+    [screenWindow.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *viewImage =UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+//    UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);
+    
+    DrawRectView *view = [[DrawRectView alloc] initWithFrame:self.view.bounds];
+    view.backgroundColor = [UIColor whiteColor];
+    view.image = viewImage;
+    view.isBezier = NO;
+    [self.view addSubview:view];
+    
 }
 
 

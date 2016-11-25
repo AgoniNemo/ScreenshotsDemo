@@ -15,6 +15,10 @@
 		BA6F2DCC1DDD90BD004D2B9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6F2DCA1DDD90BD004D2B9A /* LaunchScreen.storyboard */; };
 		BA6F2DD71DDD90BD004D2B9A /* ScreenshotsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DD61DDD90BD004D2B9A /* ScreenshotsDemoTests.m */; };
 		BA6F2DE21DDD90BD004D2B9A /* ScreenshotsDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DE11DDD90BD004D2B9A /* ScreenshotsDemoUITests.m */; };
+		BA6F2DF21DDD9E12004D2B9A /* DrawRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DF11DDD9E12004D2B9A /* DrawRectView.m */; };
+		BA6F2DF41DDDAF0A004D2B9A /* pic_029.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA6F2DF31DDDAF0A004D2B9A /* pic_029.jpg */; };
+		BA96C7B61DE7ED5B00963FF2 /* DrawModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA96C7B51DE7ED5B00963FF2 /* DrawModel.m */; };
+		BA96C7B91DE81ADC00963FF2 /* DrawSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA96C7B81DE81ADC00963FF2 /* DrawSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,14 @@
 		BA6F2DDD1DDD90BD004D2B9A /* ScreenshotsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenshotsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6F2DE11DDD90BD004D2B9A /* ScreenshotsDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenshotsDemoUITests.m; sourceTree = "<group>"; };
 		BA6F2DE31DDD90BD004D2B9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA6F2DEF1DDD94A2004D2B9A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		BA6F2DF01DDD9E12004D2B9A /* DrawRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawRectView.h; sourceTree = "<group>"; };
+		BA6F2DF11DDD9E12004D2B9A /* DrawRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawRectView.m; sourceTree = "<group>"; wrapsLines = 0; };
+		BA6F2DF31DDDAF0A004D2B9A /* pic_029.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic_029.jpg; sourceTree = "<group>"; };
+		BA96C7B41DE7ED5B00963FF2 /* DrawModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawModel.h; sourceTree = "<group>"; };
+		BA96C7B51DE7ED5B00963FF2 /* DrawModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawModel.m; sourceTree = "<group>"; };
+		BA96C7B71DE81ADC00963FF2 /* DrawSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawSettingViewController.h; sourceTree = "<group>"; };
+		BA96C7B81DE81ADC00963FF2 /* DrawSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +113,18 @@
 		BA6F2DBB1DDD90BD004D2B9A /* ScreenshotsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BA6F2DF31DDDAF0A004D2B9A /* pic_029.jpg */,
 				BA6F2DBF1DDD90BD004D2B9A /* AppDelegate.h */,
 				BA6F2DC01DDD90BD004D2B9A /* AppDelegate.m */,
+				BA6F2DEF1DDD94A2004D2B9A /* PrefixHeader.pch */,
 				BA6F2DC21DDD90BD004D2B9A /* ViewController.h */,
 				BA6F2DC31DDD90BD004D2B9A /* ViewController.m */,
+				BA6F2DF01DDD9E12004D2B9A /* DrawRectView.h */,
+				BA6F2DF11DDD9E12004D2B9A /* DrawRectView.m */,
+				BA96C7B71DE81ADC00963FF2 /* DrawSettingViewController.h */,
+				BA96C7B81DE81ADC00963FF2 /* DrawSettingViewController.m */,
+				BA96C7B41DE7ED5B00963FF2 /* DrawModel.h */,
+				BA96C7B51DE7ED5B00963FF2 /* DrawModel.m */,
 				BA6F2DC51DDD90BD004D2B9A /* Main.storyboard */,
 				BA6F2DC81DDD90BD004D2B9A /* Assets.xcassets */,
 				BA6F2DCA1DDD90BD004D2B9A /* LaunchScreen.storyboard */,
@@ -249,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6F2DF41DDDAF0A004D2B9A /* pic_029.jpg in Resources */,
 				BA6F2DCC1DDD90BD004D2B9A /* LaunchScreen.storyboard in Resources */,
 				BA6F2DC91DDD90BD004D2B9A /* Assets.xcassets in Resources */,
 				BA6F2DC71DDD90BD004D2B9A /* Main.storyboard in Resources */,
@@ -276,9 +297,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6F2DF21DDD9E12004D2B9A /* DrawRectView.m in Sources */,
+				BA96C7B61DE7ED5B00963FF2 /* DrawModel.m in Sources */,
 				BA6F2DC41DDD90BD004D2B9A /* ViewController.m in Sources */,
 				BA6F2DC11DDD90BD004D2B9A /* AppDelegate.m in Sources */,
 				BA6F2DBE1DDD90BD004D2B9A /* main.m in Sources */,
+				BA96C7B91DE81ADC00963FF2 /* DrawSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +453,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2P45FGG4X5;
 				INFOPLIST_FILE = ScreenshotsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mjwon.ScreenshotsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,6 +466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2P45FGG4X5;
 				INFOPLIST_FILE = ScreenshotsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mjwon.ScreenshotsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +542,7 @@
 				BA6F2DE81DDD90BD004D2B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA6F2DE91DDD90BD004D2B9A /* Build configuration list for PBXNativeTarget "ScreenshotsDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +551,7 @@
 				BA6F2DEB1DDD90BD004D2B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA6F2DEC1DDD90BD004D2B9A /* Build configuration list for PBXNativeTarget "ScreenshotsDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +560,7 @@
 				BA6F2DEE1DDD90BD004D2B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
