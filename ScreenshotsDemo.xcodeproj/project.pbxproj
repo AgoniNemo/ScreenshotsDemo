@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA121EA71DE9BC1D00A45155 /* ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA121EA61DE9BC1D00A45155 /* ColorView.m */; };
 		BA6F2DBE1DDD90BD004D2B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DBD1DDD90BD004D2B9A /* main.m */; };
 		BA6F2DC11DDD90BD004D2B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DC01DDD90BD004D2B9A /* AppDelegate.m */; };
 		BA6F2DC41DDD90BD004D2B9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DC31DDD90BD004D2B9A /* ViewController.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA121EA51DE9BC1D00A45155 /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
+		BA121EA61DE9BC1D00A45155 /* ColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorView.m; sourceTree = "<group>"; };
 		BA6F2DB91DDD90BD004D2B9A /* ScreenshotsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenshotsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6F2DBD1DDD90BD004D2B9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA6F2DBF1DDD90BD004D2B9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				BA6F2DEF1DDD94A2004D2B9A /* PrefixHeader.pch */,
 				BA6F2DC21DDD90BD004D2B9A /* ViewController.h */,
 				BA6F2DC31DDD90BD004D2B9A /* ViewController.m */,
+				BA121EA51DE9BC1D00A45155 /* ColorView.h */,
+				BA121EA61DE9BC1D00A45155 /* ColorView.m */,
 				BA6F2DF01DDD9E12004D2B9A /* DrawRectView.h */,
 				BA6F2DF11DDD9E12004D2B9A /* DrawRectView.m */,
 				BA96C7B71DE81ADC00963FF2 /* DrawSettingViewController.h */,
@@ -301,6 +306,7 @@
 				BA96C7B61DE7ED5B00963FF2 /* DrawModel.m in Sources */,
 				BA6F2DC41DDD90BD004D2B9A /* ViewController.m in Sources */,
 				BA6F2DC11DDD90BD004D2B9A /* AppDelegate.m in Sources */,
+				BA121EA71DE9BC1D00A45155 /* ColorView.m in Sources */,
 				BA6F2DBE1DDD90BD004D2B9A /* main.m in Sources */,
 				BA96C7B91DE81ADC00963FF2 /* DrawSettingViewController.m in Sources */,
 			);

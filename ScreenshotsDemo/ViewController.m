@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "PrefixHeader.pch"
 #import "DrawRectView.h"
-
+#import "ColorView.h"
 @interface ViewController ()
 
 @end
@@ -26,11 +26,17 @@
     imageV.frame = CGRectMake(10, 100, image.size.width, image.size.height);
     [self.view addSubview:imageV];
     
+    
+    CGRect rect = [UIScreen mainScreen].bounds;
+    ColorView *v = [[ColorView alloc] initWithFrame:CGRectMake(10, 300, rect.size.width-20, 20)];
+    
+    [self.view addSubview:v];
+    
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    
+    /**
     UIWindow *screenWindow = [[UIApplication sharedApplication].windows lastObject];
     
     UIGraphicsBeginImageContext(screenWindow.frame.size);
@@ -48,6 +54,7 @@
     view.image = viewImage;
     view.isBezier = NO;
     [self.view addSubview:view];
+     */
     
 }
 
