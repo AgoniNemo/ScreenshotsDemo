@@ -10,8 +10,12 @@
 #import "PrefixHeader.pch"
 #import "DrawRectView.h"
 #import "ColorView.h"
-@interface ViewController ()
+#import "TextAttachment.h"
 
+@interface ViewController ()
+{
+    UITextView *tv;
+}
 @end
 
 @implementation ViewController
@@ -28,14 +32,49 @@
     
     
     CGRect rect = [UIScreen mainScreen].bounds;
-    ColorView *v = [[ColorView alloc] initWithFrame:CGRectMake(10, 300, rect.size.width-20, 20)];
+    ColorView *v = [[ColorView alloc] initWithFrame:CGRectMake(10, 300, rect.size.width-20, 30)];
     
     [self.view addSubview:v];
     
+    tv =[[UITextView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(v.frame)+30, rect.size.width-20, 30)];
+    
+    NSString *name = @"[10].png";
+    
+    TextAttachment *ment = [[TextAttachment alloc] init];
+    
+    ment.image = [UIImage imageNamed:name];
+    ment.size = CGSizeMake(20, 20);
+    [tv.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:ment] atIndex:tv.selectedRange.location];
+    tv.selectedRange = NSMakeRange(tv.selectedRange.location + 1, tv.selectedRange.length);
+    
+    [self.view addSubview:tv];
+    
 }
-
+//根据字体计算表情的高度
+- (CGFloat)heightWithFont:(UIFont *)font {
+    
+    if (!font){font = [UIFont systemFontOfSize:17];}
+    
+    NSDictionary *dict = @{NSFontAttributeName:font};
+    
+    CGSize maxsize = CGSizeMake(100, MAXFLOAT);
+    
+    CGSize size = [@"/" boundingRectWithSize:maxsize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
+    
+    return size.height;
+}
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    
+    NSString *name = @"[10].png";
+    
+    TextAttachment *ment = [[TextAttachment alloc] init];
+    
+    ment.image = [UIImage imageNamed:name];
+    ment.size = CGSizeMake(20, 20);
+    [tv.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:ment] atIndex:tv.selectedRange.location];
+    tv.selectedRange = NSMakeRange(tv.selectedRange.location + 1, tv.selectedRange.length);
+    
     /**
     UIWindow *screenWindow = [[UIApplication sharedApplication].windows lastObject];
     

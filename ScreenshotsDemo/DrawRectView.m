@@ -141,7 +141,9 @@
 {
     context = UIGraphicsGetCurrentContext();
     
+    /** 画出来的图片是倒的，坐标不同
     CGContextDrawImage(context, self.bounds, _image.CGImage);
+     */
     [_image drawInRect:self.bounds];//在坐标中画出图片
     
     if (_isBezier) {
