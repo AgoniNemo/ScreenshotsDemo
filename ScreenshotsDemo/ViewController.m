@@ -11,6 +11,7 @@
 #import "DrawRectView.h"
 #import "ColorView.h"
 #import "TextAttachment.h"
+#import "TestViewController.h"
 
 @interface ViewController ()
 {
@@ -66,14 +67,9 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     
-    NSString *name = @"[10].png";
+    TestViewController *test = [[TestViewController alloc] init];
     
-    TextAttachment *ment = [[TextAttachment alloc] init];
-    
-    ment.image = [UIImage imageNamed:name];
-    ment.size = CGSizeMake(20, 20);
-    [tv.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:ment] atIndex:tv.selectedRange.location];
-    tv.selectedRange = NSMakeRange(tv.selectedRange.location + 1, tv.selectedRange.length);
+    [self.navigationController pushViewController:test animated:YES];
     
     /**
     UIWindow *screenWindow = [[UIApplication sharedApplication].windows lastObject];

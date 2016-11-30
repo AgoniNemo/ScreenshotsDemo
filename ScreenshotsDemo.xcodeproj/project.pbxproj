@@ -21,6 +21,14 @@
 		BA7524601DEE76B000AB07E9 /* ShowColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75245F1DEE76B000AB07E9 /* ShowColorView.m */; };
 		BA7524621DEEA58E00AB07E9 /* [10].png in Resources */ = {isa = PBXBuildFile; fileRef = BA7524611DEEA58E00AB07E9 /* [10].png */; };
 		BA7524651DEEA7E200AB07E9 /* TextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7524641DEEA7E200AB07E9 /* TextAttachment.m */; };
+		BA7524681DEEB79A00AB07E9 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7524671DEEB79A00AB07E9 /* TestViewController.m */; };
+		BA7524701DEEBBBD00AB07E9 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA75246A1DEEBBBD00AB07E9 /* 1.jpg */; };
+		BA7524711DEEBBBD00AB07E9 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA75246B1DEEBBBD00AB07E9 /* 2.jpg */; };
+		BA7524721DEEBBBD00AB07E9 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA75246C1DEEBBBD00AB07E9 /* 3.jpg */; };
+		BA7524731DEEBBBD00AB07E9 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA75246D1DEEBBBD00AB07E9 /* 4.jpg */; };
+		BA7524741DEEBBBD00AB07E9 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA75246E1DEEBBBD00AB07E9 /* 5.jpg */; };
+		BA7524751DEEBBBD00AB07E9 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA75246F1DEEBBBD00AB07E9 /* 6.jpg */; };
+		BA7524781DEEBBE300AB07E9 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7524771DEEBBE300AB07E9 /* TestTableViewCell.m */; };
 		BA96C7B61DE7ED5B00963FF2 /* DrawModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA96C7B51DE7ED5B00963FF2 /* DrawModel.m */; };
 		BA96C7B91DE81ADC00963FF2 /* DrawSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA96C7B81DE81ADC00963FF2 /* DrawSettingViewController.m */; };
 /* End PBXBuildFile section */
@@ -70,6 +78,16 @@
 		BA7524611DEEA58E00AB07E9 /* [10].png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "[10].png"; sourceTree = "<group>"; };
 		BA7524631DEEA7E200AB07E9 /* TextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextAttachment.h; sourceTree = "<group>"; };
 		BA7524641DEEA7E200AB07E9 /* TextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextAttachment.m; sourceTree = "<group>"; };
+		BA7524661DEEB79A00AB07E9 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		BA7524671DEEB79A00AB07E9 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		BA75246A1DEEBBBD00AB07E9 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		BA75246B1DEEBBBD00AB07E9 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		BA75246C1DEEBBBD00AB07E9 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		BA75246D1DEEBBBD00AB07E9 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		BA75246E1DEEBBBD00AB07E9 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		BA75246F1DEEBBBD00AB07E9 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		BA7524761DEEBBE300AB07E9 /* TestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
+		BA7524771DEEBBE300AB07E9 /* TestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
 		BA96C7B41DE7ED5B00963FF2 /* DrawModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawModel.h; sourceTree = "<group>"; };
 		BA96C7B51DE7ED5B00963FF2 /* DrawModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawModel.m; sourceTree = "<group>"; };
 		BA96C7B71DE81ADC00963FF2 /* DrawSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawSettingViewController.h; sourceTree = "<group>"; };
@@ -124,6 +142,7 @@
 		BA6F2DBB1DDD90BD004D2B9A /* ScreenshotsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BA7524691DEEBBBD00AB07E9 /* Img */,
 				BA7524611DEEA58E00AB07E9 /* [10].png */,
 				BA6F2DF31DDDAF0A004D2B9A /* pic_029.jpg */,
 				BA6F2DBF1DDD90BD004D2B9A /* AppDelegate.h */,
@@ -131,6 +150,10 @@
 				BA6F2DEF1DDD94A2004D2B9A /* PrefixHeader.pch */,
 				BA6F2DC21DDD90BD004D2B9A /* ViewController.h */,
 				BA6F2DC31DDD90BD004D2B9A /* ViewController.m */,
+				BA7524661DEEB79A00AB07E9 /* TestViewController.h */,
+				BA7524671DEEB79A00AB07E9 /* TestViewController.m */,
+				BA7524761DEEBBE300AB07E9 /* TestTableViewCell.h */,
+				BA7524771DEEBBE300AB07E9 /* TestTableViewCell.m */,
 				BA7524631DEEA7E200AB07E9 /* TextAttachment.h */,
 				BA7524641DEEA7E200AB07E9 /* TextAttachment.m */,
 				BA121EA51DE9BC1D00A45155 /* ColorView.h */,
@@ -176,6 +199,19 @@
 				BA6F2DE31DDD90BD004D2B9A /* Info.plist */,
 			);
 			path = ScreenshotsDemoUITests;
+			sourceTree = "<group>";
+		};
+		BA7524691DEEBBBD00AB07E9 /* Img */ = {
+			isa = PBXGroup;
+			children = (
+				BA75246A1DEEBBBD00AB07E9 /* 1.jpg */,
+				BA75246B1DEEBBBD00AB07E9 /* 2.jpg */,
+				BA75246C1DEEBBBD00AB07E9 /* 3.jpg */,
+				BA75246D1DEEBBBD00AB07E9 /* 4.jpg */,
+				BA75246E1DEEBBBD00AB07E9 /* 5.jpg */,
+				BA75246F1DEEBBBD00AB07E9 /* 6.jpg */,
+			);
+			path = Img;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,11 +323,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7524751DEEBBBD00AB07E9 /* 6.jpg in Resources */,
 				BA6F2DF41DDDAF0A004D2B9A /* pic_029.jpg in Resources */,
+				BA7524741DEEBBBD00AB07E9 /* 5.jpg in Resources */,
 				BA6F2DCC1DDD90BD004D2B9A /* LaunchScreen.storyboard in Resources */,
+				BA7524711DEEBBBD00AB07E9 /* 2.jpg in Resources */,
 				BA7524621DEEA58E00AB07E9 /* [10].png in Resources */,
+				BA7524701DEEBBBD00AB07E9 /* 1.jpg in Resources */,
 				BA6F2DC91DDD90BD004D2B9A /* Assets.xcassets in Resources */,
+				BA7524731DEEBBBD00AB07E9 /* 4.jpg in Resources */,
 				BA6F2DC71DDD90BD004D2B9A /* Main.storyboard in Resources */,
+				BA7524721DEEBBBD00AB07E9 /* 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +362,8 @@
 				BA96C7B61DE7ED5B00963FF2 /* DrawModel.m in Sources */,
 				BA6F2DC41DDD90BD004D2B9A /* ViewController.m in Sources */,
 				BA7524651DEEA7E200AB07E9 /* TextAttachment.m in Sources */,
+				BA7524681DEEB79A00AB07E9 /* TestViewController.m in Sources */,
+				BA7524781DEEBBE300AB07E9 /* TestTableViewCell.m in Sources */,
 				BA6F2DC11DDD90BD004D2B9A /* AppDelegate.m in Sources */,
 				BA121EA71DE9BC1D00A45155 /* ColorView.m in Sources */,
 				BA7524601DEE76B000AB07E9 /* ShowColorView.m in Sources */,
