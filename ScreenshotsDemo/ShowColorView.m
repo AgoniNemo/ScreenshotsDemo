@@ -33,8 +33,12 @@
         
         //设置颜色分割点（范围：0-1）
         
-        gradientLayer.locations = @[@(0.25f),@(0.3f), @(0.5f),@(0.75f),@(1.0f)];
-
+        gradientLayer.locations = @[@(0.08),@(0.17), @(0.25),@(0.33),@(0.42),@(0.50),@(0.58),@(0.67),@(0.75),@(0.83),@(0.92)];
+        
+        for (CGFloat i = 0; i < 12; i ++) {
+            CGFloat j = 1.0/12.0;
+            NSLog(@"@(%.2f)",j*i);
+        }
         
     }
     return self;
@@ -75,12 +79,13 @@
     CGFloat b = 0.0f;
     
     NSInteger conut = total/255;
-    NSLog(@"%f",point);
-    NSLog(@"%ld",conut);
+//    NSLog(@"%f",point);
+//    NSLog(@"%ld",conut);
     switch (conut) {
         case 0:
         {
             r = total;
+            NSLog(@"total:%f",total);
         }
             break;
         case 1:
