@@ -8,6 +8,8 @@
 
 #import "ShowColorView.h"
 
+#define RGB(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+
 #define TOTAL 255*3
 
 @implementation ShowColorView
@@ -28,21 +30,22 @@
         gradientLayer.endPoint = CGPointMake(1, 0);
         
         //设置颜色数组
-        gradientLayer.colors = @[(__bridge id)[UIColor whiteColor].CGColor,(__bridge id)[UIColor redColor].CGColor,(__bridge id)[UIColor purpleColor].CGColor,(__bridge id)[UIColor cyanColor].CGColor,(__bridge id)[UIColor blueColor].CGColor,(__bridge id)[UIColor greenColor].CGColor,(__bridge id)[UIColor lightGrayColor].CGColor,(__bridge id)[UIColor whiteColor].CGColor,
-                                 (__bridge id)[UIColor blackColor].CGColor];
+        gradientLayer.colors = @[(__bridge id)[UIColor whiteColor].CGColor,(__bridge id)RGB(196, 255, 48).CGColor,(__bridge id)[UIColor greenColor].CGColor,(__bridge id)[UIColor cyanColor].CGColor,(__bridge id)[UIColor blueColor].CGColor,(__bridge id)[UIColor blueColor].CGColor,(__bridge id)[UIColor purpleColor].CGColor,(__bridge id)RGB(232, 65, 87).CGColor,(__bridge id)[UIColor redColor].CGColor,(__bridge id)[UIColor orangeColor].CGColor,(__bridge id)[UIColor yellowColor].CGColor,(__bridge id)[UIColor lightGrayColor].CGColor,(__bridge id)[UIColor yellowColor].CGColor,(__bridge id)[UIColor lightGrayColor].CGColor];
         
         //设置颜色分割点（范围：0-1）
         
-        gradientLayer.locations = @[@(0.08),@(0.17), @(0.25),@(0.33),@(0.42),@(0.50),@(0.58),@(0.67),@(0.75),@(0.83),@(0.92)];
+        gradientLayer.locations = @[@(0.07),@(0.14),@(0.21),@(0.29),@(0.36),@(0.43),@(0.50),@(0.57), @(0.64),@(0.71),@(0.79),@(0.86),@(0.93),@(1.0)];
         
-        for (CGFloat i = 0; i < 12; i ++) {
-            CGFloat j = 1.0/12.0;
+        for (CGFloat i = 0; i < 14; i ++) {
+            CGFloat j = 1.0/14.0;
             NSLog(@"@(%.2f)",j*i);
         }
         
     }
     return self;
 }
+
+
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
