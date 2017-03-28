@@ -33,11 +33,8 @@
     
     
     CGRect rect = [UIScreen mainScreen].bounds;
-    ColorView *v = [[ColorView alloc] initWithFrame:CGRectMake(10, 300, rect.size.width-20, 30)];
     
-    [self.view addSubview:v];
-    
-    tv =[[UITextView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(v.frame)+30, rect.size.width-20, 30)];
+    tv =[[UITextView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(imageV.frame)+30, rect.size.width-20, 30)];
     
     NSString *name = @"[10].png";
     
@@ -50,6 +47,36 @@
     
     [self.view addSubview:tv];
     
+    [self createRight];
+}
+
+-(void)createRight{
+
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"截图" style:UIBarButtonItemStyleDone target:self action:@selector(screenShots)];
+    self.navigationItem.rightBarButtonItem = item;
+
+}
+-(void)screenShots{
+
+    UIWindow *screenWindow = [[UIApplication sharedApplication].windows lastObject];
+    
+    UIGraphicsBeginImageContext(screenWindow.frame.size);
+    
+    [screenWindow.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *viewImage =UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    //    UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);
+    
+    DrawRectView *view = [[DrawRectView alloc] initWithFrame:self.view.bounds];
+    view.backgroundColor = [UIColor whiteColor];
+    view.image = viewImage;
+    view.isBezier = NO;
+    view.saveImage = YES;
+    [self.view addSubview:view];
+
 }
 //根据字体计算表情的高度
 - (CGFloat)heightWithFont:(UIFont *)font {
@@ -70,26 +97,6 @@
     TestViewController *test = [[TestViewController alloc] init];
     
     [self.navigationController pushViewController:test animated:YES];
-    
-    /**
-    UIWindow *screenWindow = [[UIApplication sharedApplication].windows lastObject];
-    
-    UIGraphicsBeginImageContext(screenWindow.frame.size);
-    
-    [screenWindow.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
-    UIImage *viewImage =UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-//    UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);
-    
-    DrawRectView *view = [[DrawRectView alloc] initWithFrame:self.view.bounds];
-    view.backgroundColor = [UIColor whiteColor];
-    view.image = viewImage;
-    view.isBezier = NO;
-    [self.view addSubview:view];
-     */
     
 }
 

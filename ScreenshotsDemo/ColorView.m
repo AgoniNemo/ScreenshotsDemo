@@ -41,6 +41,10 @@
 -(void)selectColorActionWith:(UIColor *)color
 {
     _showView.backgroundColor = color;
+    
+    if (self.selectColor) {
+        self.selectColor(color);
+    }
 }
 
 //-(void)drawRect:(CGRect)rect

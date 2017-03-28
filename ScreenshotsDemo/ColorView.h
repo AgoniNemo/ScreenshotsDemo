@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+typedef void(^SelectColor)(UIColor*);
+
 @interface ColorView : UIView
+
+@property (nonatomic ,copy) SelectColor selectColor;
 
 @end

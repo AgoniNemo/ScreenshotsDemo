@@ -71,7 +71,7 @@
 		BA6F2DE31DDD90BD004D2B9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA6F2DEF1DDD94A2004D2B9A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BA6F2DF01DDD9E12004D2B9A /* DrawRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawRectView.h; sourceTree = "<group>"; };
-		BA6F2DF11DDD9E12004D2B9A /* DrawRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawRectView.m; sourceTree = "<group>"; wrapsLines = 0; };
+		BA6F2DF11DDD9E12004D2B9A /* DrawRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawRectView.m; sourceTree = "<group>"; wrapsLines = 1; };
 		BA6F2DF31DDDAF0A004D2B9A /* pic_029.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic_029.jpg; sourceTree = "<group>"; };
 		BA75245E1DEE76B000AB07E9 /* ShowColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowColorView.h; sourceTree = "<group>"; };
 		BA75245F1DEE76B000AB07E9 /* ShowColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowColorView.m; sourceTree = "<group>"; };

@@ -8,16 +8,18 @@
 
 #import "DrawRectView.h"
 #import "DrawModel.h"
-
+#import "ColorView.h"
 
 @interface DrawRectView ()
 {
     CGContextRef context;
+    BOOL show;
 }
 @property (nonatomic ,assign) NSInteger indext;
 @property (nonatomic ,strong) NSMutableArray *paths;
 @property (nonatomic ,strong) UIBezierPath *path;
 @property (nonatomic ,strong) NSMutableArray *oldPaths;
+@property (nonatomic ,strong) ColorView *slectColorView;
 @end
 
 @implementation DrawRectView
@@ -26,14 +28,20 @@
 -(instancetype)initWithFrame:(CGRect)frame
 {
     if (self == [super initWithFrame:frame]) {
+        show = YES;
         _paths = [NSMutableArray array];
         CGFloat height = 40;
         UIToolbar *bar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,frame.size.height-height, frame.size.width, height)];
-        UIBarButtonItem *i1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"chatBar_face"] style:UIBarButtonItemStyleDone target:self action:@selector(cancel)];
-        UIBarButtonItem *i2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"chatBar_face"] style:UIBarButtonItemStyleDone target:self action:@selector(load)];
-        UIBarButtonItem *i3 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"chatBar_face"] style:UIBarButtonItemStyleDone target:self action:@selector(setting)];
-        UIBarButtonItem *i4 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"chatBar_face"] style:UIBarButtonItemStyleDone target:self action:@selector(setting)];
-        bar.items = @[i1,i2,i3,i4];
+        
+        UIBarButtonItem *i1 = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancel)];
+        
+        UIBarButtonItem *i2 = [[UIBarButtonItem alloc] initWithTitle:@"前进" style:UIBarButtonItemStyleDone target:self action:@selector(load)];
+        
+        UIBarButtonItem *i3 = [[UIBarButtonItem alloc] initWithTitle:@"删除所有" style:UIBarButtonItemStyleDone target:self action:@selector(deleteAll)];
+        
+        UIBarButtonItem *i4 = [[UIBarButtonItem alloc] initWithTitle:@"设置颜色" style:UIBarButtonItemStyleDone target:self action:@selector(setting)];
+        UIBarButtonItem *i5 = [[UIBarButtonItem alloc] initWithTitle:@"保存图片" style:UIBarButtonItemStyleDone target:self action:@selector(savaImage)];
+        bar.items = @[i1,i2,i3,i4,i5];
         bar.barTintColor = [UIColor colorWithRed:87/255.0 green:136/255.0 blue:170/255.0 alpha:1];
         bar.tintColor = [UIColor whiteColor];
         [self addSubview:bar];
@@ -118,23 +126,31 @@
     [self setNeedsDisplay];
 }
 -(void)setting{
-
     
+    [self addSubview:self.slectColorView];
+    show = !show;
+    self.slectColorView.hidden = show;
     
-    
+    __weak typeof(self) ws = self;
+    self.slectColorView.selectColor = ^(UIColor *color){
+        ws.color = color;
+    };
 }
+
 -(void)savaImage{
 
-    UIGraphicsBeginImageContext(self.frame.size);
+    NSLog(@"保存图片！");
+    
+    UIGraphicsBeginImageContext(CGSizeMake(self.bounds.size.width, self.bounds.size.height-44));
     
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     
-    UIImage *viewImage =UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     
     UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);
-    
+    [self removeFromSuperview];
 }
 
 -(void)drawRect:(CGRect)rect
@@ -177,6 +193,13 @@
         }
         
     }
+}
+-(ColorView *)slectColorView
+{
+    if (_slectColorView == nil) {
+        _slectColorView = [[ColorView alloc] initWithFrame:CGRectMake(10, self.bounds.size.height-80, self.bounds.size.width-20, 30)];
+    }
+    return _slectColorView;
 }
 
 @end

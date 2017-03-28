@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol DrawRectViewDelegate <NSObject>
+
+-(void)selectImageView:(UIImage *)image;
+
+@end
 
 @interface DrawRectView : UIView
 
@@ -16,7 +21,9 @@
 @property (nonatomic ,strong) UIColor *color;
 
 @property (nonatomic ,assign) CGFloat lineWidth;
-
+@property (nonatomic ,assign) BOOL saveImage;
 @property (nonatomic ,assign) BOOL isBezier;
-
+    
+@property (nonatomic ,weak) id<DrawRectViewDelegate> delegate;
+    
 @end
