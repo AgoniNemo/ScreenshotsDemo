@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BA121EA71DE9BC1D00A45155 /* ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA121EA61DE9BC1D00A45155 /* ColorView.m */; };
+		BA5AB6D61E8B545A00245212 /* ILView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AB6D51E8B545A00245212 /* ILView.m */; };
+		BA5AB6D91E8B547500245212 /* ILHuePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AB6D81E8B547500245212 /* ILHuePickerView.m */; };
+		BA5AB6DC1E8B558F00245212 /* UIColor+GetHSB.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AB6DB1E8B558F00245212 /* UIColor+GetHSB.m */; };
 		BA6F2DBE1DDD90BD004D2B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DBD1DDD90BD004D2B9A /* main.m */; };
 		BA6F2DC11DDD90BD004D2B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DC01DDD90BD004D2B9A /* AppDelegate.m */; };
 		BA6F2DC41DDD90BD004D2B9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DC31DDD90BD004D2B9A /* ViewController.m */; };
@@ -53,6 +56,12 @@
 /* Begin PBXFileReference section */
 		BA121EA51DE9BC1D00A45155 /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
 		BA121EA61DE9BC1D00A45155 /* ColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorView.m; sourceTree = "<group>"; };
+		BA5AB6D41E8B545A00245212 /* ILView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILView.h; sourceTree = "<group>"; };
+		BA5AB6D51E8B545A00245212 /* ILView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILView.m; sourceTree = "<group>"; };
+		BA5AB6D71E8B547500245212 /* ILHuePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHuePickerView.h; sourceTree = "<group>"; };
+		BA5AB6D81E8B547500245212 /* ILHuePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILHuePickerView.m; sourceTree = "<group>"; };
+		BA5AB6DA1E8B558F00245212 /* UIColor+GetHSB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GetHSB.h"; sourceTree = "<group>"; };
+		BA5AB6DB1E8B558F00245212 /* UIColor+GetHSB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GetHSB.m"; sourceTree = "<group>"; };
 		BA6F2DB91DDD90BD004D2B9A /* ScreenshotsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenshotsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6F2DBD1DDD90BD004D2B9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA6F2DBF1DDD90BD004D2B9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +165,12 @@
 				BA7524771DEEBBE300AB07E9 /* TestTableViewCell.m */,
 				BA7524631DEEA7E200AB07E9 /* TextAttachment.h */,
 				BA7524641DEEA7E200AB07E9 /* TextAttachment.m */,
+				BA5AB6D41E8B545A00245212 /* ILView.h */,
+				BA5AB6D51E8B545A00245212 /* ILView.m */,
+				BA5AB6DA1E8B558F00245212 /* UIColor+GetHSB.h */,
+				BA5AB6DB1E8B558F00245212 /* UIColor+GetHSB.m */,
+				BA5AB6D71E8B547500245212 /* ILHuePickerView.h */,
+				BA5AB6D81E8B547500245212 /* ILHuePickerView.m */,
 				BA121EA51DE9BC1D00A45155 /* ColorView.h */,
 				BA121EA61DE9BC1D00A45155 /* ColorView.m */,
 				BA75245E1DEE76B000AB07E9 /* ShowColorView.h */,
@@ -359,6 +374,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA6F2DF21DDD9E12004D2B9A /* DrawRectView.m in Sources */,
+				BA5AB6D91E8B547500245212 /* ILHuePickerView.m in Sources */,
+				BA5AB6DC1E8B558F00245212 /* UIColor+GetHSB.m in Sources */,
 				BA96C7B61DE7ED5B00963FF2 /* DrawModel.m in Sources */,
 				BA6F2DC41DDD90BD004D2B9A /* ViewController.m in Sources */,
 				BA7524651DEEA7E200AB07E9 /* TextAttachment.m in Sources */,
@@ -369,6 +386,7 @@
 				BA7524601DEE76B000AB07E9 /* ShowColorView.m in Sources */,
 				BA6F2DBE1DDD90BD004D2B9A /* main.m in Sources */,
 				BA96C7B91DE81ADC00963FF2 /* DrawSettingViewController.m in Sources */,
+				BA5AB6D61E8B545A00245212 /* ILView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,8 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
- 
-    [self.view addSubview:self.tableView];
+
+    UIImageView *image = [[UIImageView alloc] initWithImage:self.image];
+    image.frame = self.view.bounds;
+    [self.view addSubview:image];
+//    [self.view addSubview:self.tableView];
 
 }
 

@@ -12,11 +12,13 @@
 #import "ColorView.h"
 #import "TextAttachment.h"
 #import "TestViewController.h"
+#import "ILHuePickerView.h"
 
-@interface ViewController ()
+@interface ViewController ()<DrawRectViewDelegate,ILHuePickerViewDelegate>
 {
     UITextView *tv;
 }
+@property (nonatomic ,strong) UIImage *image;
 @end
 
 @implementation ViewController
@@ -34,7 +36,7 @@
     
     CGRect rect = [UIScreen mainScreen].bounds;
     
-    tv =[[UITextView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(imageV.frame)+30, rect.size.width-20, 30)];
+    tv =[[UITextView alloc] initWithFrame:CGRectMake(10, rect.size.height-30, rect.size.width-20, 30)];
     
     NSString *name = @"[10].png";
     
@@ -48,12 +50,34 @@
     [self.view addSubview:tv];
     
     [self createRight];
+    
+//    [self createView];
 }
 
+-(void)createView{
+
+    CGRect rect = [UIScreen mainScreen].bounds;
+    ILHuePickerView *color = [[ILHuePickerView alloc] initWithFrame:CGRectMake(10, 100, rect.size.width-20, 40)];
+    color.delegate = self;
+    [self.view addSubview:color];
+
+}
+-(void)huePicked:(float)hue picker:(ILHuePickerView *)picker{
+
+    self.view.backgroundColor = picker.color;
+}
 -(void)createRight{
 
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"截图" style:UIBarButtonItemStyleDone target:self action:@selector(screenShots)];
-    self.navigationItem.rightBarButtonItem = item;
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"next" style:UIBarButtonItemStyleDone target:self action:@selector(screenShots)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"leftItem" style:UIBarButtonItemStyleDone target:self action:@selector(skipNext)];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(screenShots)];
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
+    swipe.numberOfTouchesRequired = 3;
+    [self.view addGestureRecognizer:swipe];
 
 }
 -(void)screenShots{
@@ -62,21 +86,33 @@
     
     UIGraphicsBeginImageContext(screenWindow.frame.size);
     
-    [screenWindow.layer renderInContext:UIGraphicsGetCurrentContext()];
+    [self.navigationController.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     
-    UIImage *viewImage =UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
-    
-    //    UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);
-    
+    NSLog(@"viewImage:%@",viewImage);
+     _image = viewImage;
     DrawRectView *view = [[DrawRectView alloc] initWithFrame:self.view.bounds];
-    view.backgroundColor = [UIColor whiteColor];
     view.image = viewImage;
     view.isBezier = NO;
+    view.delegate = self;
     view.saveImage = YES;
-    [self.view addSubview:view];
+    view.color = [UIColor blackColor];
+    [screenWindow addSubview:view];
 
+}
+-(void)skipNext{
+    TestViewController *test = [[TestViewController alloc] init];
+    test.image = _image;
+    [self.navigationController pushViewController:test animated:YES];
+}
+-(void)selectImageView:(UIImage *)image
+{
+    _image = image;
+    [self skipNext];
+    
+    NSLog(@"%s",__func__);
 }
 //根据字体计算表情的高度
 - (CGFloat)heightWithFont:(UIFont *)font {
@@ -91,14 +127,7 @@
     
     return size.height;
 }
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    
-    TestViewController *test = [[TestViewController alloc] init];
-    
-    [self.navigationController pushViewController:test animated:YES];
-    
-}
+
 
 
 - (void)didReceiveMemoryWarning {

@@ -140,17 +140,42 @@
 -(void)savaImage{
 
     NSLog(@"保存图片！");
+    UIImage *image = [self getImage];
+    if (!_saveImage) {
+        [self setDelegateForImage:image];
+        return;
+    }
+    __weak typeof(self) ws = self;
+    if (_delegate && [_delegate respondsToSelector:@selector(selectImageView:)]) {
+        [_delegate selectImageView:image];
+    }
+    dispatch_async(dispatch_queue_create("save.image.com", NULL), ^{
+        UIImageWriteToSavedPhotosAlbum(image,ws,@selector(image:didFinishSavingWithError:contextInfo:),(__bridge void *)ws);
+    });
+}
+-(UIImage *)getImage{
+
+    UIGraphicsBeginImageContext(self.bounds.size);
     
-    UIGraphicsBeginImageContext(CGSizeMake(self.bounds.size.width, self.bounds.size.height-44));
-    
-    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    //renderInContext（其参数的子图层也会被绘制进来）
+    [self.layer drawInContext:UIGraphicsGetCurrentContext()];
     
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-    
     UIGraphicsEndImageContext();
-    
-    UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);
+    return viewImage;
+}
+-(void)setDelegateForImage:(UIImage *)image{
+
+    if (_delegate && [_delegate respondsToSelector:@selector(selectImageView:)]) {
+        [_delegate selectImageView:image];
+    }
     [self removeFromSuperview];
+}
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    
+    [self removeFromSuperview];
+    NSLog(@"image = %@, error = %@, contextInfo = %@", image, error, contextInfo);
 }
 
 -(void)drawRect:(CGRect)rect
