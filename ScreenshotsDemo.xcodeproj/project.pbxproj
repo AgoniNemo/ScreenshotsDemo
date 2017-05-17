@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA121EA71DE9BC1D00A45155 /* ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA121EA61DE9BC1D00A45155 /* ColorView.m */; };
 		BA5AB6D61E8B545A00245212 /* ILView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AB6D51E8B545A00245212 /* ILView.m */; };
 		BA5AB6D91E8B547500245212 /* ILHuePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AB6D81E8B547500245212 /* ILHuePickerView.m */; };
 		BA5AB6DC1E8B558F00245212 /* UIColor+GetHSB.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5AB6DB1E8B558F00245212 /* UIColor+GetHSB.m */; };
@@ -19,7 +18,6 @@
 		BA6F2DCC1DDD90BD004D2B9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6F2DCA1DDD90BD004D2B9A /* LaunchScreen.storyboard */; };
 		BA6F2DD71DDD90BD004D2B9A /* ScreenshotsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DD61DDD90BD004D2B9A /* ScreenshotsDemoTests.m */; };
 		BA6F2DE21DDD90BD004D2B9A /* ScreenshotsDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DE11DDD90BD004D2B9A /* ScreenshotsDemoUITests.m */; };
-		BA6F2DF21DDD9E12004D2B9A /* DrawRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6F2DF11DDD9E12004D2B9A /* DrawRectView.m */; };
 		BA6F2DF41DDDAF0A004D2B9A /* pic_029.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA6F2DF31DDDAF0A004D2B9A /* pic_029.jpg */; };
 		BA7524601DEE76B000AB07E9 /* ShowColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75245F1DEE76B000AB07E9 /* ShowColorView.m */; };
 		BA7524621DEEA58E00AB07E9 /* [10].png in Resources */ = {isa = PBXBuildFile; fileRef = BA7524611DEEA58E00AB07E9 /* [10].png */; };
@@ -32,7 +30,10 @@
 		BA7524741DEEBBBD00AB07E9 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA75246E1DEEBBBD00AB07E9 /* 5.jpg */; };
 		BA7524751DEEBBBD00AB07E9 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA75246F1DEEBBBD00AB07E9 /* 6.jpg */; };
 		BA7524781DEEBBE300AB07E9 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7524771DEEBBE300AB07E9 /* TestTableViewCell.m */; };
-		BA96C7B61DE7ED5B00963FF2 /* DrawModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA96C7B51DE7ED5B00963FF2 /* DrawModel.m */; };
+		BA7FB73D1E8D24E300758CB7 /* BottomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7FB7361E8D24E300758CB7 /* BottomControlView.m */; };
+		BA7FB73E1E8D24E300758CB7 /* ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7FB7381E8D24E300758CB7 /* ColorView.m */; };
+		BA7FB73F1E8D24E300758CB7 /* DrawModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7FB73A1E8D24E300758CB7 /* DrawModel.m */; };
+		BA7FB7401E8D24E300758CB7 /* DrawRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7FB73C1E8D24E300758CB7 /* DrawRectView.m */; };
 		BA96C7B91DE81ADC00963FF2 /* DrawSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA96C7B81DE81ADC00963FF2 /* DrawSettingViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA121EA51DE9BC1D00A45155 /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
-		BA121EA61DE9BC1D00A45155 /* ColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorView.m; sourceTree = "<group>"; };
 		BA5AB6D41E8B545A00245212 /* ILView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILView.h; sourceTree = "<group>"; };
 		BA5AB6D51E8B545A00245212 /* ILView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILView.m; sourceTree = "<group>"; };
 		BA5AB6D71E8B547500245212 /* ILHuePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHuePickerView.h; sourceTree = "<group>"; };
@@ -79,8 +78,6 @@
 		BA6F2DE11DDD90BD004D2B9A /* ScreenshotsDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenshotsDemoUITests.m; sourceTree = "<group>"; };
 		BA6F2DE31DDD90BD004D2B9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA6F2DEF1DDD94A2004D2B9A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		BA6F2DF01DDD9E12004D2B9A /* DrawRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawRectView.h; sourceTree = "<group>"; };
-		BA6F2DF11DDD9E12004D2B9A /* DrawRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawRectView.m; sourceTree = "<group>"; wrapsLines = 1; };
 		BA6F2DF31DDDAF0A004D2B9A /* pic_029.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic_029.jpg; sourceTree = "<group>"; };
 		BA75245E1DEE76B000AB07E9 /* ShowColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowColorView.h; sourceTree = "<group>"; };
 		BA75245F1DEE76B000AB07E9 /* ShowColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowColorView.m; sourceTree = "<group>"; };
@@ -97,8 +94,14 @@
 		BA75246F1DEEBBBD00AB07E9 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
 		BA7524761DEEBBE300AB07E9 /* TestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
 		BA7524771DEEBBE300AB07E9 /* TestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
-		BA96C7B41DE7ED5B00963FF2 /* DrawModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawModel.h; sourceTree = "<group>"; };
-		BA96C7B51DE7ED5B00963FF2 /* DrawModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawModel.m; sourceTree = "<group>"; };
+		BA7FB7351E8D24E300758CB7 /* BottomControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomControlView.h; sourceTree = "<group>"; };
+		BA7FB7361E8D24E300758CB7 /* BottomControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomControlView.m; sourceTree = "<group>"; };
+		BA7FB7371E8D24E300758CB7 /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
+		BA7FB7381E8D24E300758CB7 /* ColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorView.m; sourceTree = "<group>"; };
+		BA7FB7391E8D24E300758CB7 /* DrawModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawModel.h; sourceTree = "<group>"; };
+		BA7FB73A1E8D24E300758CB7 /* DrawModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawModel.m; sourceTree = "<group>"; };
+		BA7FB73B1E8D24E300758CB7 /* DrawRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawRectView.h; sourceTree = "<group>"; };
+		BA7FB73C1E8D24E300758CB7 /* DrawRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawRectView.m; sourceTree = "<group>"; };
 		BA96C7B71DE81ADC00963FF2 /* DrawSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawSettingViewController.h; sourceTree = "<group>"; };
 		BA96C7B81DE81ADC00963FF2 /* DrawSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +154,7 @@
 		BA6F2DBB1DDD90BD004D2B9A /* ScreenshotsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BA7FB7341E8D24E300758CB7 /* DrawRectView */,
 				BA7524691DEEBBBD00AB07E9 /* Img */,
 				BA7524611DEEA58E00AB07E9 /* [10].png */,
 				BA6F2DF31DDDAF0A004D2B9A /* pic_029.jpg */,
@@ -171,16 +175,10 @@
 				BA5AB6DB1E8B558F00245212 /* UIColor+GetHSB.m */,
 				BA5AB6D71E8B547500245212 /* ILHuePickerView.h */,
 				BA5AB6D81E8B547500245212 /* ILHuePickerView.m */,
-				BA121EA51DE9BC1D00A45155 /* ColorView.h */,
-				BA121EA61DE9BC1D00A45155 /* ColorView.m */,
 				BA75245E1DEE76B000AB07E9 /* ShowColorView.h */,
 				BA75245F1DEE76B000AB07E9 /* ShowColorView.m */,
-				BA6F2DF01DDD9E12004D2B9A /* DrawRectView.h */,
-				BA6F2DF11DDD9E12004D2B9A /* DrawRectView.m */,
 				BA96C7B71DE81ADC00963FF2 /* DrawSettingViewController.h */,
 				BA96C7B81DE81ADC00963FF2 /* DrawSettingViewController.m */,
-				BA96C7B41DE7ED5B00963FF2 /* DrawModel.h */,
-				BA96C7B51DE7ED5B00963FF2 /* DrawModel.m */,
 				BA6F2DC51DDD90BD004D2B9A /* Main.storyboard */,
 				BA6F2DC81DDD90BD004D2B9A /* Assets.xcassets */,
 				BA6F2DCA1DDD90BD004D2B9A /* LaunchScreen.storyboard */,
@@ -227,6 +225,21 @@
 				BA75246F1DEEBBBD00AB07E9 /* 6.jpg */,
 			);
 			path = Img;
+			sourceTree = "<group>";
+		};
+		BA7FB7341E8D24E300758CB7 /* DrawRectView */ = {
+			isa = PBXGroup;
+			children = (
+				BA7FB7351E8D24E300758CB7 /* BottomControlView.h */,
+				BA7FB7361E8D24E300758CB7 /* BottomControlView.m */,
+				BA7FB7371E8D24E300758CB7 /* ColorView.h */,
+				BA7FB7381E8D24E300758CB7 /* ColorView.m */,
+				BA7FB7391E8D24E300758CB7 /* DrawModel.h */,
+				BA7FB73A1E8D24E300758CB7 /* DrawModel.m */,
+				BA7FB73B1E8D24E300758CB7 /* DrawRectView.h */,
+				BA7FB73C1E8D24E300758CB7 /* DrawRectView.m */,
+			);
+			path = DrawRectView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,20 +386,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA6F2DF21DDD9E12004D2B9A /* DrawRectView.m in Sources */,
+				BA7FB7401E8D24E300758CB7 /* DrawRectView.m in Sources */,
+				BA7FB73E1E8D24E300758CB7 /* ColorView.m in Sources */,
+				BA7FB73F1E8D24E300758CB7 /* DrawModel.m in Sources */,
 				BA5AB6D91E8B547500245212 /* ILHuePickerView.m in Sources */,
 				BA5AB6DC1E8B558F00245212 /* UIColor+GetHSB.m in Sources */,
-				BA96C7B61DE7ED5B00963FF2 /* DrawModel.m in Sources */,
 				BA6F2DC41DDD90BD004D2B9A /* ViewController.m in Sources */,
 				BA7524651DEEA7E200AB07E9 /* TextAttachment.m in Sources */,
 				BA7524681DEEB79A00AB07E9 /* TestViewController.m in Sources */,
 				BA7524781DEEBBE300AB07E9 /* TestTableViewCell.m in Sources */,
 				BA6F2DC11DDD90BD004D2B9A /* AppDelegate.m in Sources */,
-				BA121EA71DE9BC1D00A45155 /* ColorView.m in Sources */,
 				BA7524601DEE76B000AB07E9 /* ShowColorView.m in Sources */,
 				BA6F2DBE1DDD90BD004D2B9A /* main.m in Sources */,
 				BA96C7B91DE81ADC00963FF2 /* DrawSettingViewController.m in Sources */,
 				BA5AB6D61E8B545A00245212 /* ILView.m in Sources */,
+				BA7FB73D1E8D24E300758CB7 /* BottomControlView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

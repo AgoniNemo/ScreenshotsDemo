@@ -9,6 +9,7 @@
 #import "DrawRectView.h"
 #import "DrawModel.h"
 #import "ColorView.h"
+#import "BottomControlView.h"
 
 @interface DrawRectView ()
 {
@@ -30,24 +31,48 @@
     if (self == [super initWithFrame:frame]) {
         show = YES;
         _paths = [NSMutableArray array];
-        CGFloat height = 40;
-        UIToolbar *bar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,frame.size.height-height, frame.size.width, height)];
+        CGFloat height = 44;
+        BottomControlView *barView = [[BottomControlView alloc] initWithFrame:CGRectMake(0,frame.size.height-height, frame.size.width, height)];
         
-        UIBarButtonItem *i1 = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancel)];
+        NSArray *titles = @[@"颜色",@"取消",@"保存"];
         
-        UIBarButtonItem *i2 = [[UIBarButtonItem alloc] initWithTitle:@"前进" style:UIBarButtonItemStyleDone target:self action:@selector(load)];
-        
-        UIBarButtonItem *i3 = [[UIBarButtonItem alloc] initWithTitle:@"删除所有" style:UIBarButtonItemStyleDone target:self action:@selector(deleteAll)];
-        
-        UIBarButtonItem *i4 = [[UIBarButtonItem alloc] initWithTitle:@"设置颜色" style:UIBarButtonItemStyleDone target:self action:@selector(setting)];
-        UIBarButtonItem *i5 = [[UIBarButtonItem alloc] initWithTitle:@"保存图片" style:UIBarButtonItemStyleDone target:self action:@selector(savaImage)];
-        bar.items = @[i1,i2,i3,i4,i5];
-        bar.barTintColor = [UIColor colorWithRed:87/255.0 green:136/255.0 blue:170/255.0 alpha:1];
-        bar.tintColor = [UIColor whiteColor];
-        [self addSubview:bar];
+        CGFloat width = 40;
+        CGFloat btnH = 20;
+        CGFloat x = 5;
+        CGFloat sp = (frame.size.width-2*x-titles.count*width)/2;
+        for (int i = 0 ; i < titles.count; i ++) {
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+            btn.frame = CGRectMake(x+i*(width)+sp*i, 12, width, btnH);
+            [btn setTitle:titles[i] forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            btn.titleLabel.font = [UIFont systemFontOfSize:13];
+            [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+            btn.tag  = i ;
+            [barView addSubview:btn];
+        }
+        [self addSubview:barView];
         
     }
     return self;
+}
+-(void)btnAction:(UIButton *)btn{
+    switch (btn.tag) {
+        case 0:
+        {
+            [self setting];
+        }
+            break;
+        case 1:
+        {
+            [self cancel];
+        }
+            break;
+        default:
+        {
+            [self savaImage];
+        }
+            break;
+    }
 }
 -(void)pan:(UIPanGestureRecognizer *)sender{
     
@@ -85,7 +110,7 @@
         [_paths addObject:model];
     }
     self.oldPaths = [_paths mutableCopy];
-    NSLog(@"touchesBegan:%@",NSStringFromCGPoint(touchPoint));
+//    NSLog(@"touchesBegan:%@",NSStringFromCGPoint(touchPoint));
 }
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -114,10 +139,11 @@
         [self setNeedsDisplay];
     }
 }
--(void)cancel{
+//后退
+-(void)retreat{
     
     [_paths removeLastObject];
-    NSLog(@"%@---%@",self.paths,self.oldPaths);
+//    NSLog(@"%@---%@",self.paths,self.oldPaths);
     
     [self setNeedsDisplay];
 }
@@ -135,8 +161,14 @@
     self.slectColorView.selectColor = ^(UIColor *color){
         ws.color = color;
     };
+    self.slectColorView.returnPrevious = ^{
+        [ws retreat];
+    };
 }
+-(void)cancel{
 
+    [self removeFromSuperview];
+}
 -(void)savaImage{
 
     NSLog(@"保存图片！");
@@ -155,7 +187,7 @@
 }
 -(UIImage *)getImage{
 
-    UIGraphicsBeginImageContext(self.bounds.size);
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,0.0);
     
     //renderInContext（其参数的子图层也会被绘制进来）
     [self.layer drawInContext:UIGraphicsGetCurrentContext()];
@@ -222,7 +254,7 @@
 -(ColorView *)slectColorView
 {
     if (_slectColorView == nil) {
-        _slectColorView = [[ColorView alloc] initWithFrame:CGRectMake(10, self.bounds.size.height-80, self.bounds.size.width-20, 30)];
+        _slectColorView = [[ColorView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height-88, self.bounds.size.width, 44)];
     }
     return _slectColorView;
 }

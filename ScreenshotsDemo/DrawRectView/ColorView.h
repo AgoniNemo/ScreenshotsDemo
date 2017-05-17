@@ -10,9 +10,9 @@
 
 
 typedef void(^SelectColor)(UIColor*);
-
+typedef void(^ReturnPrevious)();
 @interface ColorView : UIView
 
 @property (nonatomic ,copy) SelectColor selectColor;
-
+@property (nonatomic ,copy) ReturnPrevious returnPrevious;
 @end
