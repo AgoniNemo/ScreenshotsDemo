@@ -36,7 +36,7 @@
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake(frame.size.width-image.size.width-15, 11, image.size.width+15, image.size.height);
         [btn setImage:image forState:UIControlStateNormal];
-        NSLog(@"btn:%@",NSStringFromCGRect(btn.frame));
+//        NSLog(@"btn:%@",NSStringFromCGRect(btn.frame));
         
         [btn setImage:image forState:UIControlStateHighlighted];
         [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];

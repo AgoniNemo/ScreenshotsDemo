@@ -34,15 +34,15 @@
         CGFloat height = 44;
         BottomControlView *barView = [[BottomControlView alloc] initWithFrame:CGRectMake(0,frame.size.height-height, frame.size.width, height)];
         
-        NSArray *titles = @[@"颜色",@"取消",@"保存"];
+        NSArray *titles = @[@"颜色",@"取消",@"保存",@"前进",@"后退"];
         
-        CGFloat width = 40;
+        CGFloat vWidth = frame.size.width;
         CGFloat btnH = 20;
         CGFloat x = 5;
-        CGFloat sp = (frame.size.width-2*x-titles.count*width)/2;
+        CGFloat width = (vWidth -2*x)/titles.count;
         for (int i = 0 ; i < titles.count; i ++) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-            btn.frame = CGRectMake(x+i*(width)+sp*i, 12, width, btnH);
+            btn.frame = CGRectMake(x+i*(width), 12, width, btnH);
             [btn setTitle:titles[i] forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             btn.titleLabel.font = [UIFont systemFontOfSize:13];
@@ -67,9 +67,19 @@
             [self cancel];
         }
             break;
-        default:
+        case 2:
         {
             [self savaImage];
+        }
+            break;
+        case 3:
+        {
+            [self load];
+        }
+            break;
+        default:
+        {
+            [self retreat];
         }
             break;
     }
@@ -110,7 +120,7 @@
         [_paths addObject:model];
     }
     self.oldPaths = [_paths mutableCopy];
-//    NSLog(@"touchesBegan:%@",NSStringFromCGPoint(touchPoint));
+    //    NSLog(@"touchesBegan:%@",NSStringFromCGPoint(touchPoint));
 }
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -132,6 +142,7 @@
     
     [self setNeedsDisplay];
 }
+//前进
 -(void)load{
     
     if (self.oldPaths.count > _paths.count) {
@@ -143,7 +154,6 @@
 -(void)retreat{
     
     [_paths removeLastObject];
-//    NSLog(@"%@---%@",self.paths,self.oldPaths);
     
     [self setNeedsDisplay];
 }
@@ -166,11 +176,11 @@
     };
 }
 -(void)cancel{
-
+    
     [self removeFromSuperview];
 }
 -(void)savaImage{
-
+    
     NSLog(@"保存图片！");
     UIImage *image = [self getImage];
     if (!_saveImage) {
@@ -186,7 +196,7 @@
     });
 }
 -(UIImage *)getImage{
-
+    
     UIGraphicsBeginImageContextWithOptions(self.bounds.size,NO,0.0);
     
     //renderInContext（其参数的子图层也会被绘制进来）
@@ -197,7 +207,7 @@
     return viewImage;
 }
 -(void)setDelegateForImage:(UIImage *)image{
-
+    
     if (_delegate && [_delegate respondsToSelector:@selector(selectImageView:)]) {
         [_delegate selectImageView:image];
     }
@@ -215,7 +225,7 @@
     context = UIGraphicsGetCurrentContext();
     
     /** 画出来的图片是倒的，坐标不同
-    CGContextDrawImage(context, self.bounds, _image.CGImage);
+     CGContextDrawImage(context, self.bounds, _image.CGImage);
      */
     [_image drawInRect:self.bounds];//在坐标中画出图片
     
@@ -234,11 +244,11 @@
         DrawSubModel *model = _paths[i];
         NSMutableArray *points = model.paths;
         for (int j = 0 ; j < points.count-1; j ++) {
-
+            
             CGPoint first = [points[j] CGPointValue];
             CGPoint second = [points[j+1] CGPointValue];
             /**
-            CGContextSetRGBStrokeColor(context, 2/255.f, 174/255.f, 240/255.f, 1);*/
+             CGContextSetRGBStrokeColor(context, 2/255.f, 174/255.f, 240/255.f, 1);*/
             CGContextSetStrokeColorWithColor(context, model.color.CGColor);
             CGContextSetLineWidth(context,model.lineWidth);
             
